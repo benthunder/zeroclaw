@@ -19,7 +19,7 @@ services:
       # Required: Your LLM provider API key
       - API_KEY=${API_KEY:-}
       # Or use the prefixed version:
-      # - ZEROCLAW_API_KEY=${ZEROCLAW_API_KEY:-}
+      - ZEROCLAW_API_KEY=${ZEROCLAW_API_KEY:-}
       
       # Optional: LLM provider (default: openrouter)
       # Options: openrouter, openai, anthropic, ollama
@@ -34,7 +34,7 @@ services:
     volumes:
       # Persist workspace and config (must match WORKDIR/HOME in Dockerfile)
       - zeroclaw-data:/zeroclaw-data
-      - ${WORKSPACE_DIR:-/home/ben/projects}
+      - ${WORKSPACE_DIR:-/home/ben/projects}:/zeroclaw-data/workspace
       
     ports:
       # Gateway API port (override HOST_PORT if 3000 is taken)
