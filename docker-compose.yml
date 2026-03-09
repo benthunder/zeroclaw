@@ -40,7 +40,8 @@ services:
       # Gateway API port (override HOST_PORT if 3000 is taken)
       - "${HOST_PORT:-3000}:3000"
     
-    command: ["zeroclaw", "daemon"]
+    entrypoint: ["zeroclaw"]
+    command: ["service","start"]
     
     # Resource limits
     deploy:
