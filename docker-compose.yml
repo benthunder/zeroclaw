@@ -34,7 +34,7 @@ services:
     volumes:
       # Persist workspace and config (must match WORKDIR/HOME in Dockerfile)
       - zeroclaw-data:/zeroclaw-data
-      - ${WORKSPACE_DIR:-/home/ben/tools/zeroclaw-workspace}:/zeroclaw-data
+      - ${WORKSPACE_DIR:-/home/ben/tools/zeroclaw-workspace}:/zeroclaw-data/workspace
       - ${PROJECT_DIR:-/home/ben/projects}:/projects
       
     ports:
