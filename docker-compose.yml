@@ -33,8 +33,7 @@ services:
       
     volumes:
       # Persist workspace and config (must match WORKDIR/HOME in Dockerfile)
-      - zeroclaw-data:/zeroclaw-data
-      - ${WORKSPACE_DIR:-/home/ben/projects}:/zeroclaw-data/workspace
+      - ./zeroclaw-data:/zeroclaw-data
       
     ports:
       # Gateway API port (override HOST_PORT if 3000 is taken)
@@ -58,6 +57,3 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
-
-volumes:
-  zeroclaw-data:
