@@ -34,10 +34,13 @@ services:
     volumes:
       # Persist workspace and config (must match WORKDIR/HOME in Dockerfile)
       - zeroclaw-data:/zeroclaw-data
+      - ${WORKSPACE_DIR:-/home/ben/projects}:/workspace
       
     ports:
       # Gateway API port (override HOST_PORT if 3000 is taken)
       - "${HOST_PORT:-3000}:3000"
+    
+    command: ["zeroclaw", "daemon"]
     
     # Resource limits
     deploy:
